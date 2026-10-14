@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Nkaka | Portfolio</title>
+    <!-- Added Bebas Neue and Archivo Black -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="bg-video">
+        <source src="imag/videoplayback.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Removed the Dark Overlay completely so video is visible -->
+
+    <!-- Navigation (Transparent, Logo Left, Links Center, Contact Right) -->
+    <nav class="navbar">
+        <!-- Logo on the Left -->
+        <div class="logo">Emmanuel Nkaka</div>
+
+        <!-- Nav Links Centered -->
+        <div class="nav-pill-container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#toolkit">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#styleguide">Style</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Button on the Right -->
+        <a href="#contact" class="nav-contact-btn">Contact</a>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="bio" id="home">
+        <h1>Emmanuel Nkaka</h1>
+        <p class="bio-subtitle">Computer Science Student | Software Developer | Linux Enthusiast</p>
+        <p class="bio-desc">
+            Third-year BSc Computer Science student at the Copperbelt University with hands-on experience across software, systems and hardware: machine learning for IoT security, operating systems in C/C++, GUI programming, web development, and Arduino-based electronics and circuitry. Interested in applying technology to development challenges in Zambia. Seeking an internship or attachment where I can build, debug and learn.
+        </p>
+    </section>
+
+    <!-- 2. Technical Toolkit (2 Columns Only) -->
+    <section class="section-container" id="toolkit">
+        <h2>Technical Toolkit</h2>
+        <div class="card-container-2col">
+            
+            <!-- Programming Languages (Slower Scroll) -->
+            <div class="card card-scroll">
+                <h3>Programming Languages</h3>
+                <div class="scroll-track">
+                    <ul class="scroll-content">
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>SQL (MySQL)</li>
+                        <!-- Duplicated for seamless loop -->
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>SQL (MySQL)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Combined Electronics & Systems Card -->
+            <div class="card">
+                <h3>Electronics, Systems & Tools</h3>
+                <p>Electronics:</p>
+                <ul>
+                    <li>Arduino programming</li>
+                    <li>Circuit design & breadboarding</li>
+                    <li>Sensor & component interfacing</li>
+                </ul>
+                <br>
+                <p>Systems & Tools:</p>
+                <ul>
+                    <li>Linux (Kali)</li>
+                    <li>Git / GitHub</li>
+                    <li>MSYS2 MinGW</li>
+                    <li>Code::Blocks</li>
+                    <li>GTK3</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. Education -->
+    <section class="section-container" id="education">
+        <h2>Education</h2>
+        <div class="card-container-2col">
+            <div class="card">
+                <h3>BSc Computer Science</h3>
+                <p>Copperbelt University (CBU), Kitwe, Zambia</p>
+                <p>Currently in Year 3</p>
+                <br>
+                <p>Coursework:</p>
+                <ul>
+                    <li>Operating Systems</li>
+                    <li>Numerical Analysis</li>
+                    <li>Data Communications & Networking</li>
+                    <li>Machine Learning</li>
+                    <li>Software Engineering</li>
+                    <li>Object-Oriented Programming (Java)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Style Guide Section -->
+    <section class="section-container" id="styleguide">
+        <h2>Styleguide</h2>
+        <p class="section-desc">Select a color palette below to instantly change the theme of the website.</p>
+
+        <div class="style-grid">
+            <!-- Left Column: Logos -->
+            <div class="style-card logos-card">
+                <div class="card-header">
+                    <h3>Logos</h3>
+                    <div class="card-buttons">
+                        <button class="btn-glass active">Primary</button>
+                        <button class="btn-glass">Secondary</button>
+                    </div>
+                </div>
+                <div class="card-content center-content">
+                    <div class="logo-shape">
+                        <div class="bar left"></div>
+                        <div class="circle"></div>
+                        <div class="bar right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Active Palette -->
+            <div class="style-card palette-card">
+                <div class="card-header">
+                    <h3>Active Palette</h3>
+                    <div class="card-buttons">
+                        <button class="btn-glass active">Primary</button>
+                        <button class="btn-glass">Secondary</button>
+                    </div>
+                </div>
+                
+                <div class="palette-content">
+                    <div class="color-block c-1"><span>Primary</span></div>
+                    <div class="color-block c-2"><span>Secondary</span></div>
+                    <div class="color-block c-3"><span>Accent</span></div>
+                </div>
+
+                <!-- Updated Switcher with 5 options -->
+                <div class="palette-switcher">
+                    <div class="swatch swatch-1 active" data-theme="theme-1" title="Buttermilk & Midnight"></div>
+                    <div class="swatch swatch-2" data-theme="theme-2" title="Bordo & Green"></div>
+                    <div class="swatch swatch-3" data-theme="theme-3" title="Vellar Red"></div>
+                    <div class="swatch swatch-4" data-theme="theme-4" title="Ruby, Indigo, Moss, Nectar"></div>
+                    <div class="swatch swatch-5" data-theme="theme-5" title="Lime, Teal & Blur"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Projects -->
+    <section class="section-container" id="projects">
+        <h2>Projects</h2>
+        <div class="card-container-2col">
+            <div class="card">
+                <h3>IoT Intrusion Detection System</h3>
+                <p>2026 | Group Project</p>
+                <p>Built a machine learning pipeline to detect malicious network traffic in IoT environments using the UNSW-NB15 dataset.</p>
+            </div>
+            <div class="card">
+                <h3>Arduino & Circuitry Projects</h3>
+                <p>2025</p>
+                <p>Designed, wired and programmed Arduino-based circuits, interfacing sensors and components.</p>
+            </div>
+            <div class="card">
+                <h3>MiniOS: Scheduler & Process Management</h3>
+                <p>Coursework</p>
+                <p>Implemented CPU scheduling algorithms, inter-process communication (IPC), memory management and logging in C/C++.</p>
+            </div>
+            <div class="card">
+                <h3>News Webpage & GTK3 Apps</h3>
+                <p>Web & C Programming</p>
+                <p>Developed a news website with a PHP/MySQL backend. Built native GTK3 windowed applications in C.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Career Goal -->
+    <section class="section-container" id="career">
+        <h2>Career Goal</h2>
+        <div class="card-container-2col">
+            <div class="card">
+                <p>My goal is to become a skilled Software Engineer capable of developing reliable applications, modern web systems and efficient operating system solutions while contributing to innovative technology projects. Seeking an internship or attachment where I can build, debug and learn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact -->
+    <section class="section-container" id="contact">
+        <h2>Contact</h2>
+        <div class="card-container-2col">
+            <div class="card">
+                <p>Email: emmanuelnkaka3@gmail.com</p>
+                <p>Phone: 0772 648 499</p>
+                <p>Location: Kitwe, Zambia</p>
+                <p>GitHub: Metroski</p>
+                <br>
+                <a href="mailto:emmanuelnkaka3@gmail.com" class="btn-outline">Contact Me &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Emmanuel Nkaka. All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript for Color Theme Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const swatches = document.querySelectorAll('.swatch');
+            
+            swatches.forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    // Remove active class from all
+                    swatches.forEach(s => s.classList.remove('active'));
+                    // Add active to clicked
+                    swatch.classList.add('active');
+                    
+                    // Get theme and apply
+                    const theme = swatch.getAttribute('data-theme');
+                    document.body.className = theme;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

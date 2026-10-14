@@ -1,0 +1,549 @@
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Default Theme: Buttermilk & Midnight */
+    --bg-color: #0F3C65; 
+    --text-main: #FFF2BA; 
+    --text-muted: #a8c4d8;
+    --card-bg: rgba(255, 242, 186, 0.1);
+    --card-border: rgba(255, 242, 186, 0.2);
+    --accent-color: #FFF2BA; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* =========================================
+   COLOR THEMES (INCLUDING NEW PALETTES)
+   ========================================= */
+body.theme-1 {
+    --bg-color: #0F3C65; --text-main: #FFF2BA; --text-muted: #a8c4d8;
+    --card-bg: rgba(255, 242, 186, 0.1); --card-border: rgba(255, 242, 186, 0.2);
+    --accent-color: #FFF2BA;
+}
+
+body.theme-2 {
+    --bg-color: #6C151E; --text-main: #F5DABF; --text-muted: #d4b8a0;
+    --card-bg: rgba(245, 218, 191, 0.1); --card-border: rgba(245, 218, 191, 0.2);
+    --accent-color: #0F3D3A; 
+}
+
+body.theme-3 {
+    --bg-color: #1a0000; --text-main: #FF2F2F; --text-muted: #cc4444;
+    --card-bg: rgba(255, 47, 47, 0.1); --card-border: rgba(255, 47, 47, 0.2);
+    --accent-color: #FF2F2F; 
+}
+
+/* THEME 4: Ruby, Indigo, Moss, Nectar */
+body.theme-4 {
+    --bg-color: #1F2E4A; /* Indigo Rain background */
+    --text-main: #C7A046; /* Burnt Nectar */
+    --text-muted: #8A9A8A; /* Moss Shadow */
+    --card-bg: rgba(31, 46, 74, 0.6); 
+    --card-border: rgba(199, 160, 70, 0.3);
+    --accent-color: #9B2226; /* Ruby Leaf */
+}
+
+/* THEME 5: Lime, Teal & Blur */
+body.theme-5 {
+    --bg-color: #0D4B4E; /* Dark Teal */
+    --text-main: #D4ED63; /* Bright Lime */
+    --text-muted: #A0C4B4; 
+    --card-bg: rgba(13, 75, 78, 0.6); 
+    --card-border: rgba(212, 237, 99, 0.3);
+    --accent-color: #D4ED63; /* Lime */
+}
+
+/* =========================================
+   MODERN FONT STYLES & SECTIONS
+   ========================================= */
+h1, h3, .logo, .nav-links a, .btn-outline, .btn-glass, .nav-contact-btn {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(60px, 10vw, 120px); 
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #ff1a1a; 
+    margin-bottom: 20px;
+    border-bottom: none; 
+    display: block; 
+}
+
+/* =========================================
+   VIDEO BACKGROUND (HIGHLY VISIBLE)
+   ========================================= */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    object-fit: cover;
+    /* Increased opacity and removed blur to make it very visible */
+    opacity: 0.85; 
+    filter: brightness(0.8); 
+}
+
+/* Removed the dark overlay entirely so the video shines through */
+
+/* =========================================
+   NAVBAR (Transparent, Logo Left, Links Center, Contact Right)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent; 
+    backdrop-filter: none;
+    border-bottom: none;
+    transition: background 0.5s ease;
+}
+
+.logo {
+    font-size: 18px;
+    color: var(--text-main);
+    flex-shrink: 0;
+}
+
+.nav-pill-container {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    padding: 8px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 11px; 
+    padding: 8px 14px;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
+.nav-links a:hover {
+    color: var(--bg-color);
+    background: var(--accent-color);
+}
+
+.nav-contact-btn {
+    text-decoration: none;
+    color: var(--text-main);
+    background: transparent;
+    border: 1px solid var(--text-main);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-contact-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.bio {
+    text-align: center;
+    padding: 160px 20px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bio h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 50px;       
+    color: var(--accent-color); 
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.bio h1:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color);
+    color: white;
+}
+
+.bio-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.bio-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* =========================================
+   CARDS & SECTIONS
+   ========================================= */
+.section-container {
+    padding: 50px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-container-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(5px);
+    color: var(--text-main);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    min-height: 250px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.5s ease;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-size: 23px;
+}
+
+.card ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.card li {
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 23px;
+}
+
+.card p {
+    font-size: 30px;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.card-scroll {
+    position: relative;
+}
+
+.scroll-track {
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-content {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    animation: scrollVertical 4s linear infinite; 
+}
+
+.scroll-content li {
+    padding: 8px 0;
+    font-size: 23px;
+    white-space: nowrap;
+    color: var(--text-muted);
+}
+
+@keyframes scrollVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+/* =========================================
+   STYLE GUIDE & ACTIVE PALETTE
+   ========================================= */
+.style-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.style-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.5s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.card-header h3 {
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.card-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-glass {
+    background: transparent;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-glass:hover {
+    background: var(--text-main);
+    color: var(--bg-color);
+}
+
+.btn-glass.active {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.logo-shape {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-shape .bar {
+    width: 15px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 20px;
+}
+
+.logo-shape .bar.left { height: 60px; }
+.logo-shape .bar.right { height: 60px; }
+
+.logo-shape .circle {
+    width: 80px;
+    height: 80px;
+    border: 15px solid var(--accent-color);
+    border-radius: 50%;
+}
+
+.palette-content {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+}
+
+.color-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.c-1 { background-color: var(--accent-color); color: var(--bg-color); }
+.c-2 { background-color: var(--text-main); color: var(--bg-color); }
+.c-3 { background-color: var(--text-muted); color: var(--bg-color); }
+
+/* =========================================
+   COLOR SWITCHER
+   ========================================= */
+.palette-switcher {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid var(--card-border);
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.swatch {
+    flex: 1;
+    min-width: 50px; 
+    height: 70px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    border: 2px solid transparent;
+}
+
+.swatch:hover {
+    transform: scale(1.05);
+}
+
+.swatch.active {
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+/* Gradients for each swatch */
+.swatch-1 { background: linear-gradient(135deg, #FFF2BA 50%, #0F3C65 50%); }
+.swatch-2 { background: linear-gradient(135deg, #6C151E 33%, #0F3D3A 33%, #0F3D3A 66%, #F5DABF 66%); }
+.swatch-3 { background: #FF2F2F; }
+.swatch-4 { background: linear-gradient(135deg, #9B2226 25%, #1F2E4A 25%, #1F2E4A 50%, #8A9A8A 50%, #8A9A8A 75%, #C7A046 75%); }
+.swatch-5 { background: linear-gradient(135deg, #D4ED63 50%, #0D4B4E 50%); }
+
+/* =========================================
+   BUTTONS & FOOTER
+   ========================================= */
+.btn-outline {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background: transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-outline:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-muted);
+    border-top: 1px solid var(--card-border);
+    margin-top: 40px;
+    transition: background 0.5s ease;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+    .style-grid, .card-container-2col {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .nav-pill-container {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 10px;
+    }
+    
+    .nav-links {
+        justify-content: center;
+    }
+    
+    .nav-contact-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bio h1 {
+        font-size: 36px;
+    }
+
+    .bio-subtitle {
+        font-size: 14px;
+    }
+
+    .bio-desc {
+        font-size: 13px;
+    }
+    
+    h2 {
+        font-size: 60px;
+    }
+}
